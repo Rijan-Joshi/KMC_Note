@@ -1,7 +1,8 @@
 
 # Dependencies
- - [ ] Expo Font
+ - [x] Expo Font
  - [ ] Redux
- - [ ] React-native-vector-icons
- - [ ] React native Screens and React native safe area content
+ - [ ] @react-navigation/native
+ - [ ] react-native-screens react-native-safe-area-content
+ - [ ] Redux and Redux Toolkit
  - [ ] 
