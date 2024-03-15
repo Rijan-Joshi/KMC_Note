@@ -11,7 +11,7 @@ import { BlurView } from "expo-blur";
 import { Icon } from "../../utils/customIcons.js";
 
 //Importing the constants
-import { COLORS } from "../../constants/index";
+import { BORDER_RADIUS, COLORS } from "../../constants/index";
 
 const Tab = createBottomTabNavigator();
 
@@ -59,7 +59,8 @@ const styles = StyleSheet.create({
     elevation: 0,
     borderTopColor: "transparent",
     borderTopWidth: 0,
-    backgroundColor: COLORS.primaryBlackRGBA
+    backgroundColor: COLORS.primaryBlackRGBA,
+    borderRadius: BORDER_RADIUS.radius_8
   },
   blurview: {
     position: "absolute",

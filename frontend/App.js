@@ -1,12 +1,9 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { useFonts } from "expo-font";
-import { createIconSetFromIcoMoon } from "@expo/vector-icons";
 import HomeScreenNavigator from "./app/navigators/HomeScreenNavigator";
+import { SafeAreaView } from "react-native-safe-area-context";
 // import { Provider } from "react-redux";
 // import store from "./redux/store/store.js"
-
-
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
@@ -31,15 +28,11 @@ export default function App() {
 
   return (
     // <Provider store={store}>
-    
-    <HomeScreenNavigator/>
+    <SafeAreaView>
+      <HomeScreenNavigator />
+    </SafeAreaView>
     // </Provider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "red"
-  },
-});
+
