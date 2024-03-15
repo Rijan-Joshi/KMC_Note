@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import { useFonts } from "expo-font";
 import HomeScreenNavigator from "./app/navigators/HomeScreenNavigator";
-import { SafeAreaView } from "react-native-safe-area-context";
+
 // import { Provider } from "react-redux";
 // import store from "./redux/store/store.js"
 
@@ -28,9 +28,9 @@ export default function App() {
 
   return (
     // <Provider store={store}>
-    <SafeAreaView>
+
       <HomeScreenNavigator />
-    </SafeAreaView>
+ 
     // </Provider>
   );
 }
