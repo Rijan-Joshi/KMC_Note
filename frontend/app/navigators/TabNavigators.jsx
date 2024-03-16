@@ -24,7 +24,7 @@ const TabNavigators = () => {
         tabBarShowLabel: false,
         tabBarStyle: styles.tabNavigatorStyle,
         tabBarBackground: () => (
-          <BlurView style={styles.blurview} intensity={40} tint="dark" />
+          <BlurView style={styles.blurview} intensity={50} tint="dark" />
         ),
       }}
     >
@@ -33,7 +33,7 @@ const TabNavigators = () => {
         component={HomeScreen}
         options={{
           tabBarIcon: ({ focused, color, size }) => (
-            <View style={styles.icon}>
+            <View style={styles.icon(focused)}>
               <Image source={icons.HomeDynamic} style={styles.iconImage(focused)}  />
             </View>
           ),
@@ -49,7 +49,7 @@ const TabNavigators = () => {
             //   color={focused ? COLORS.primaryOrangeHex : COLORS.primaryGreyHex}
             //   size={SIZES.size_24}
             // />
-            <View style={styles.icon}>
+            <View style={styles.icon(focused)}>
               <Image source={ icons.Course } style={styles.iconImage(focused)} />
             </View>
           ),
@@ -65,7 +65,7 @@ const TabNavigators = () => {
             //   color={focused ? COLORS.primaryOrangeHex : COLORS.primaryGreyHex}
             //   size={SIZES.size_24}
             // />
-            <View style={styles.icon}>
+            <View style={styles.icon(focused)}>
               <Image source={ icons.Favorite } style={styles.iconImage(focused)} />
             </View>
           ),
@@ -90,13 +90,12 @@ const TabNavigators = () => {
 
 const styles = StyleSheet.create({
   tabNavigatorStyle: {
-    height: 80,
+    height:0,
+    paddingBottom: 40,
     position: "absolute",
     elevation: 0,
     borderTopColor: "transparent",
-    borderTopWidth: 0,
     backgroundColor: COLORS.primaryBlackRGBA,
-    borderRadius: BORDER_RADIUS.radius_8,
   },
   blurview: {
     position: "absolute",
@@ -105,15 +104,20 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
   },
-  icon: {
-    justifyContent: "center",
+  icon: (focused) => ({
     alignItems: "center",
-  },
+    justifyContent: "center",
+    backgroundColor: focused ? COLORS.primaryOrangeHex : COLORS.primaryGreyHex,
+    borderRadius: BORDER_RADIUS.radius_30,
+    padding: 10,
+    elevation: 5,
+    shadowColor: "#fff",
+    margin: -30,
+  }),
   iconImage: (focused) => ({
     width: SIZES.size_40,
     height: SIZES.size_40,
-    objectFit: "cover",
-    tintColor: !focused && COLORS.primaryBlackRGBA
+    tintColor: !focused && COLORS.primaryDarkGreyHex,
   })
 });
 

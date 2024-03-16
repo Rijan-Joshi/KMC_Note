@@ -51,6 +51,7 @@ const SIZES = {
   size_28: 28,
   size_30: 30,
   size_40: 40,
+  size_60:60,
 };
 
 const SHADOWS = {

@@ -4,6 +4,7 @@ import happyGraduation from "../assets/images/happy-graduation.svg"
 import pandaGrad from "../assets/images/panda-graduation.svg"
 import onlineLearning from "../assets/images/people-are-doing-online-chatting.svg"
 import teacherTeaching from "../assets/images/teacher-teaching.svg"
+import defaultProfilePic from "../assets/images/minecraft-dynamic-color.png"
 
 
 export default {
@@ -12,5 +13,6 @@ export default {
     happyGraduation,
     pandaGrad,
     onlineLearning,
-    teacherTeaching
+    teacherTeaching,
+    defaultProfilePic
 };
