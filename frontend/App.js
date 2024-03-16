@@ -1,4 +1,3 @@
-import { StyleSheet, Text, View } from "react-native";
 import { useFonts } from "expo-font";
 import HomeScreenNavigator from "./app/navigators/HomeScreenNavigator";
 

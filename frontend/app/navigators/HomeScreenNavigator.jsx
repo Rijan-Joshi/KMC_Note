@@ -18,7 +18,7 @@ const HomeScreenNavigator = () => {
           component={TabNavigators}
           options={{
             animationEnabled: true,
-            animationTypeForReplace: "pop",
+            animationTypeForReplace: "push",
           }}
         />
         <Stack.Screen

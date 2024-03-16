@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 //Importing the screens
@@ -11,7 +11,7 @@ import { BlurView } from "expo-blur";
 import { Icon } from "../../utils/customIcons.js";
 
 //Importing the constants
-import { BORDER_RADIUS, COLORS, SIZES } from "../../constants/index";
+import { BORDER_RADIUS, COLORS, SIZES, icons } from "../../constants/index";
 
 const Tab = createBottomTabNavigator();
 
@@ -33,11 +33,9 @@ const TabNavigators = () => {
         component={HomeScreen}
         options={{
           tabBarIcon: ({ focused, color, size }) => (
-            <Icon
-              name="home"
-              color={focused ? COLORS.primaryOrangeHex : COLORS.primaryGreyHex}
-              size={SIZES.size_24}
-            />
+            <View style={styles.icon}>
+              <Image source={icons.HomeDynamic} style={styles.iconImage(focused)}  />
+            </View>
           ),
         }}
       />
@@ -46,11 +44,14 @@ const TabNavigators = () => {
         component={CourseScreen}
         options={{
           tabBarIcon: ({ focused, color, size }) => (
-            <Icon
-              name="books"
-              color={focused ? COLORS.primaryOrangeHex : COLORS.primaryGreyHex}
-              size={SIZES.size_24}
-            />
+            // <Icon
+            //   name="books"
+            //   color={focused ? COLORS.primaryOrangeHex : COLORS.primaryGreyHex}
+            //   size={SIZES.size_24}
+            // />
+            <View style={styles.icon}>
+              <Image source={ icons.Course } style={styles.iconImage(focused)} />
+            </View>
           ),
         }}
       />
@@ -59,11 +60,14 @@ const TabNavigators = () => {
         component={FavoriteScreens}
         options={{
           tabBarIcon: ({ focused, color, size }) => (
-            <Icon
-              name="heart"
-              color={focused ? COLORS.primaryOrangeHex : COLORS.primaryGreyHex}
-              size={SIZES.size_24}
-            />
+            // <Icon
+            //   name="heart"
+            //   color={focused ? COLORS.primaryOrangeHex : COLORS.primaryGreyHex}
+            //   size={SIZES.size_24}
+            // />
+            <View style={styles.icon}>
+              <Image source={ icons.Favorite } style={styles.iconImage(focused)} />
+            </View>
           ),
         }}
       />
@@ -101,6 +105,16 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
   },
+  icon: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  iconImage: (focused) => ({
+    width: SIZES.size_40,
+    height: SIZES.size_40,
+    objectFit: "cover",
+    tintColor: !focused && COLORS.primaryBlackRGBA
+  })
 });
 
 export default TabNavigators;
